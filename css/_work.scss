@@ -1,0 +1,82 @@
+.work{
+    
+    background: black;
+    &__content{
+        padding-top: 1.5rem;
+        padding-bottom: 4rem;
+        h1{
+            color: $darkSkinColor;
+            font-size: 3rem;
+        }
+        @include breakpoints-down(medium){
+            padding: 1.5rem 3.5rem 6rem;
+            .work--name{
+                font-size: 2rem;
+                left: 10px;
+                bottom: 20px;
+            }
+            .divider{
+                left: 10px!important;
+                bottom: 10px!important;
+                width: 200px!important;
+            }
+        }
+        @include breakpoints-down(small){
+            .work--name{
+                font-size: 1rem;
+            }
+            .divider{
+                width: 125px!important;
+            }
+        }
+        @include breakpoints-up(large){
+            padding: 4rem 3.5rem 10rem;
+        }
+        @include breakpoints-up(xlarge){
+            padding: 1.5rem 13.5rem 10rem;
+        }
+    }
+    &__grid {
+        //display: grid;
+        //grid-template-columns: repeat(auto-fit, minmax(19.375rem, 1fr));
+        //gap: 1.75rem;
+        // @include breakpoints-down(small){
+        //     grid-template-columns: repeat(auto-fit, minmax(9.375rem, 1fr));
+        //     &__item{
+        //         min-height: 100px;
+        //     }
+        // }
+        display: flex;
+        justify-content: center;
+
+    }
+    &__item {
+        display: flex;
+        transform-style: preserve-3d;
+        transform: perspective(1000px);
+        width: 32.125rem;
+        position: relative;
+        img {
+            
+            width: 100%;
+            object-fit: contain;
+        }
+        span{
+            position: absolute;
+            font-size: 2rem;
+            color: white;
+            left: -60px;
+            bottom: 40px;
+            transform: translateZ(85px);
+        }
+        .divider{
+            position: absolute;
+            width: 190px;
+            height: 5px;
+            background: white;
+            left: -60px;
+            bottom: 30px;
+            transform: translateZ(85px);
+        }
+    }
+}

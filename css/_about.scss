@@ -1,0 +1,120 @@
+.about {
+    position: relative;
+    
+    .y-divider{
+        position: absolute;
+        
+        width: 1px;
+        background: #3b3553;
+        @include breakpoints-down(medium){
+            left: 2.8125rem;
+            bottom: 6.25rem;
+            height: calc(100% - 14rem);
+
+        }
+        @include breakpoints-up(large){
+            left: 2.8125rem;
+            bottom: 6.25rem;
+            height: calc(100% - 14rem);
+        }
+        @include breakpoints-up(xlarge){
+            height: calc(100% - 10rem);
+            left: 12.5rem;
+            bottom: 1.8rem;
+        }
+    }
+    .container {
+        @include breakpoints-down(medium){
+            padding: 1.5rem 3.5rem 6rem;
+        }
+        @include breakpoints-up(large){
+            padding: 1.5rem 3.5rem 6rem;
+        }
+        @include breakpoints-up(xlarge){
+            padding: 1.5rem 13.5rem;
+        }
+        h1{
+            color: $darkSkinColor;
+            font-size: 3rem;
+        }
+        .code-container {
+            @include breakpoints-down(medium){
+                padding-left: 0.625rem;       
+            }
+            @include breakpoints-up(large){
+                padding-left: 0.625rem;
+            }
+        
+            padding: 0;
+
+            .about-code {
+                color: white;
+                font-size: 1.3rem;
+                line-height: 1.6;
+                font-family: "Roboto", sans-serif !important;
+                .code-l {
+                    z-index: 2;
+                    position: relative;
+
+                    .methods,
+                    .propname,
+                    .name,
+                    .dot,
+                    .scope,
+                    .this,
+                    .returns,
+                    .className {
+                        display: inline;
+                    }
+                    .className {
+                        color: #ffa600;
+                    }
+                    .name {
+                        color: #01c2cb;
+                    }
+                    .dot {
+                        color: #3b3553;
+                    }
+                    .methods {
+                        color: #d7de59;
+                    }
+                    .this {
+                        color: #ffa600;
+                    }
+                    .propname {
+                        color: #01c2cb;
+                    }
+                    .string {
+                        color: $darkSkinColor;
+                    }
+                    .returns {
+                        color: #5e17e5;
+                    }
+                    &:after {
+                        content: attr(data-line-nr);
+                        position: absolute;
+                        left: -60px;
+                        font-size: 1rem;
+                        top: 0;
+                        line-height: 1.6;
+                        font-size: 1.3rem;
+                        color: #3b3553;
+                    }
+                    &:hover {
+                        position: relative;
+                        &:before {
+                            content: "";
+                            position: absolute;
+                            background-color: black;
+                            top: 0;
+                            width: 200%;
+                            z-index: -1;
+                            height: 100%;
+                            left: -100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

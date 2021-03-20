@@ -1,0 +1,45 @@
+.contact{
+    padding: 1.5rem 0 2.5rem;
+    &__content{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        h1{
+            color: $darkSkinColor;
+            font-size: 3rem;
+        }
+        .email{
+            font-size: 3rem;
+            margin-bottom: 30px;
+            font-weight: 300;
+            color: $skinColor;
+        }
+        @include breakpoints-down(medium){
+            padding: 1.5rem 3.5rem 4rem;
+            .email{
+                font-size: 1.5rem;
+            }
+        }
+        @include breakpoints-up(large){
+            padding: 1.5rem 3.5rem 4rem;
+        }
+        @include breakpoints-up(xlarge){
+            padding: 1.5rem 13.5rem 4rem;
+        }
+    }
+    &__links{
+        a{
+            i{
+                transition: all 200ms ease-in-out;
+                font-size: 3rem;
+                color: $skinColor; 
+            }
+            &:not(:last-child){
+                margin-right:60px ;
+            }
+            & i:hover{
+                color: $darkSkinColor;
+            }
+        }
+    }
+}

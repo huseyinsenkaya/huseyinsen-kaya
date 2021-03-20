@@ -1,0 +1,108 @@
+.home{
+    background: black;
+    height: calc(100vh - 4.75rem);
+    &__text{
+        height: 100%;
+        h1{
+            font-size: 5rem;
+            color: $lightOrange;
+            line-height: 1;
+            margin-bottom: 12rem;
+            @include breakpoints-up(large){
+                font-size: 6rem;
+            }
+            @include breakpoints-up(xlarge){
+                font-size: 7rem;
+            }
+        }
+        @include breakpoints-down(small){
+            h1{
+                font-size: 2.5rem;
+            }
+        }
+        @include breakpoints-down(medium){
+            padding-left:3.5rem;
+        } 
+        .d-text {
+            color: $lightOrange;
+        }
+        .cursor {
+            display: inline-block;
+            width: 3px;
+            background-color: #ccc;
+            animation: blink 1s infinite;
+            opacity: 1;
+        }
+        .typing {
+            animation: none;
+        }
+    }
+    &__scroll-down{
+        position: absolute;
+        margin: 0 auto;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        text-align: center;
+        z-index: 1;
+        .scroll-down-text{
+            color: #d8d8d8;
+            font-weight: bold;
+            margin-bottom: 4.875rem;
+        }
+        .scroll-down-bar{
+            display: inline-block;
+            position: absolute;
+            background-color: #d8d8d8;
+            height: 65px;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            width: 2px;
+            margin: 0 auto;
+            overflow: hidden;
+            &::before{
+                content: "";
+                position: absolute;
+                display: inline-block;
+                background: #ab987a;
+                height: 35px;
+                left: 0;
+                top: 0;
+                width: 2px;
+                z-index: 1;
+                animation: scrollDown 1.5s infinite;
+            }
+        }  
+    }
+}
+@keyframes blink {
+    0% {
+        background-color: #ccc;
+    }
+    49% {
+        background-color: #ccc;
+    }
+    50% {
+        background-color: transparent;
+    }
+    99% {
+        background-color: transparent;
+    }
+    100% {
+        background-color: #ccc;
+    }
+}
+@keyframes scrollDown{
+  0%{
+    transform: translate3d(0, -32px, 0);
+  }
+  50%{
+    animation-timing-function: ease-out;
+    transform: translate3d(0, 0, 0);
+  }
+  100%{
+    animation-timing-function: ease-in;
+    transform: translate3d(0, 65px, 0);
+  }
+}
