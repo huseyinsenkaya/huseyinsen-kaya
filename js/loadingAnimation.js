@@ -46,7 +46,7 @@ function desktopLoading(){
 }
 
 // Ipad
-function ipadLoading(){
+function iPadLoading(){
     var t1 = new TimelineMax();
   
     t1.from(".ringOne", 4, {
@@ -65,7 +65,7 @@ function ipadLoading(){
       ease: Expo.easeInOut
     }).to(".ringTwo", 4, {
       delay: 0.9,
-      y: 300,
+      y: -300,
       ease: Expo.easeInOut
     }, "-=5");
     
@@ -101,11 +101,11 @@ function mobileLoading(){
       ease: Expo.easeInOut
     }, "-=5").to(".ringOne", 4, {
       delay: 0.4,
-      y: 150,
+      y: -190,
       ease: Expo.easeInOut
     }).to(".ringTwo", 4, {
       delay: 0.9,
-      y: -150,
+      y: -190,
       ease: Expo.easeInOut
     }, "-=5");
     
@@ -129,7 +129,7 @@ if(screen.width > 1024){
     desktopLoading();
 }
 else if(768 < screen.width && screen.width <=1024) {
-    ipadLoading();
+    iPadLoading();
 }
 else if (screen.width < 768) {
     mobileLoading();

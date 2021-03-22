@@ -20,7 +20,7 @@
                 font-size: 2.5rem;
             }
         }
-        @include breakpoints-down(medium){
+        @include breakpoints-down(large){
             padding-left:3.5rem;
         } 
         .d-text {

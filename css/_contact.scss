@@ -12,7 +12,7 @@
             font-size: 3rem;
             margin-bottom: 30px;
             font-weight: 300;
-            color: $skinColor;
+            color: $lightOrange;
         }
         @include breakpoints-down(medium){
             padding: 1.5rem 3.5rem 4rem;
@@ -32,13 +32,13 @@
             i{
                 transition: all 200ms ease-in-out;
                 font-size: 3rem;
-                color: $skinColor; 
+                color: $lightOrange; 
             }
             &:not(:last-child){
                 margin-right:60px ;
             }
             & i:hover{
-                color: $darkSkinColor;
+                color: $skinColor;
             }
         }
     }
